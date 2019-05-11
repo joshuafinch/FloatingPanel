@@ -17,7 +17,7 @@ public class FloatingPanelSurfaceView: UIView {
     public lazy var grabberHandle: GrabberHandleView = { GrabberHandleView() }()
 
     /// Offset of the grabber handle from the top
-    public var grabberTopPadding: CGFloat = 6.0 { didSet {
+    @objc dynamic public var grabberTopPadding: CGFloat = 6.0 { didSet {
         setNeedsUpdateConstraints()
     } }
 
@@ -27,10 +27,10 @@ public class FloatingPanelSurfaceView: UIView {
     }
 
     /// Grabber view width and height
-    public var grabberHandleWidth: CGFloat = 36.0 { didSet {
+    @objc dynamic public var grabberHandleWidth: CGFloat = 36.0 { didSet {
         setNeedsUpdateConstraints()
     } }
-    public var grabberHandleHeight: CGFloat = 5.0 { didSet {
+    @objc dynamic public var grabberHandleHeight: CGFloat = 5.0 { didSet {
         setNeedsUpdateConstraints()
     } }
 
@@ -40,7 +40,7 @@ public class FloatingPanelSurfaceView: UIView {
     private var color: UIColor? = .white { didSet { setNeedsLayout() } }
     var bottomOverflow: CGFloat = 0.0 // Must not call setNeedsLayout()
 
-    public override var backgroundColor: UIColor? {
+    @objc dynamic public override var backgroundColor: UIColor? {
         get { return color }
         set { color = newValue }
     }
@@ -49,31 +49,31 @@ public class FloatingPanelSurfaceView: UIView {
     ///
     /// `self.contentView` is masked with the top rounded corners automatically on iOS 11 and later.
     /// On iOS 10, they are not automatically masked because of a UIVisualEffectView issue. See https://forums.developer.apple.com/thread/50854
-    public var cornerRadius: CGFloat = 0.0 { didSet { setNeedsLayout() } }
+    @objc dynamic public var cornerRadius: CGFloat = 0.0 { didSet { setNeedsLayout() } }
 
     /// A Boolean indicating whether the surface shadow is displayed.
-    public var shadowHidden: Bool = false  { didSet { setNeedsLayout() } }
+    @objc dynamic public var shadowHidden: Bool = false { didSet { setNeedsLayout() } }
 
     /// The color of the surface shadow.
-    public var shadowColor: UIColor = .black  { didSet { setNeedsLayout() } }
+    @objc dynamic public var shadowColor: UIColor = .black  { didSet { setNeedsLayout() } }
 
     /// The offset (in points) of the surface shadow.
-    public var shadowOffset: CGSize = CGSize(width: 0.0, height: 1.0)  { didSet { setNeedsLayout() } }
+    @objc dynamic public var shadowOffset: CGSize = CGSize(width: 0.0, height: 1.0)  { didSet { setNeedsLayout() } }
 
     /// The opacity of the surface shadow.
-    public var shadowOpacity: Float = 0.2 { didSet { setNeedsLayout() } }
+    @objc dynamic public var shadowOpacity: Float = 0.2 { didSet { setNeedsLayout() } }
 
     /// The blur radius (in points) used to render the surface shadow.
-    public var shadowRadius: CGFloat = 3  { didSet { setNeedsLayout() } }
+    @objc dynamic public var shadowRadius: CGFloat = 3  { didSet { setNeedsLayout() } }
 
     /// The width of the surface border.
-    public var borderColor: UIColor?  { didSet { setNeedsLayout() } }
+    @objc dynamic public var borderColor: UIColor?  { didSet { setNeedsLayout() } }
 
     /// The color of the surface border.
-    public var borderWidth: CGFloat = 0.0  { didSet { setNeedsLayout() } }
+    @objc dynamic public var borderWidth: CGFloat = 0.0  { didSet { setNeedsLayout() } }
 
     /// Offset of the container view from the top
-    public var containerTopInset: CGFloat = 0.0 { didSet {
+    @objc dynamic public var containerTopInset: CGFloat = 0.0 { didSet {
         setNeedsUpdateConstraints()
     } }
 
